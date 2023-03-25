@@ -1,27 +1,43 @@
-Description:
+Searx RSS Feed Generator
 
-This Python script generates an RSS feed and an OPML file for a given search query on a Searx instance. The RSS feed includes search results within a 4-hour timeframe, and the OPML file can be used to easily import the RSS feed into feed reader applications like Fluent Reader.
+Searx RSS Feed Generator is a Python script that creates an RSS feed and an OPML feed based on search results from a Searx instance. The script fetches search results periodically (every 4 hours by default) and generates an RSS feed with search results that have been published within a specified time frame.
+Features
 
-Features:
+    Fetch search results from a Searx instance using a custom search query
+    Generate an RSS feed with the search results
+    Create an OPML feed for easy subscription to the generated RSS feed
+    Validate the generated RSS feed
+    Periodically update the RSS and OPML feeds based on a schedule
 
- - Generates an RSS feed for search results within 4 hours of the current time.
- - Creates an OPML file to facilitate importing the RSS feed into feed reader applications.
- - Schedules the RSS feed generation to run automatically every 4 hours.
- - Uses BeautifulSoup for HTML parsing and the FeedGenerator library for feed generation.
+Installation
 
-Usage:
+    Clone the repository:
 
- - Update the script with your desired search query and Searx instance URL.
- - Run the script to generate both searx_rss_feed.xml and searx_opml_feed.xml files.
- - Start a local HTTP server (e.g., by running python -m http.server 8000) to serve the generated files.
- - Import the OPML file into your preferred feed reader application.
+bash
 
-Dependencies:
+git clone https://github.com/yourusername/searx_rss_feed_generator.git
 
- - requests
- - BeautifulSoup4
- - feedgen
- - python-dateutil
- - schedule
+    Install the required dependencies:
 
-Note: Please ensure that your feed reader can access the RSS feed URL specified in the OPML file. The script is set up to use a local URL, which means the feed will only be accessible on your local machine while the server is running. If you want to access the feed from another device, you may need to replace localhost with your local IP address or hostname.
+pip install -r requirements.txt
+
+Usage
+
+    Edit the rss_server.py script to set your desired search query and Searx instance URL.
+
+    Run the script:
+
+python rss_server.py
+
+    The script will periodically generate an RSS feed (searx_rss_feed.xml) and an OPML feed (searx_opml_feed.xml) based on the search results from the specified Searx instance.
+
+    Access the generated RSS feed and OPML feed using a web server or a local file path, depending on your setup.
+
+Customization
+
+You can customize the script by modifying the following variables in the rss_server.py file:
+
+    search_query: Set the search query for the Searx instance.
+    searx_instance_url: Set the URL of the Searx instance you want to use.
+    prefs_url: Set the URL for the preferences of the Searx instance.
+    hours: Set the maximum age (in hours) of search results to be included in the RSS feed.
