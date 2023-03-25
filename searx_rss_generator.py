@@ -83,10 +83,11 @@ def generate_rss_feed():
     feed_info = {
         "search_query": search_query,
         "title": "Searx RSS Feed for {}".format(search_query),
-        "rss_url": "http://localhost:8000/searx_rss_feed.xml"
+        "rss_url": "http://localhost:8000/rss"
     }
     
     generate_opml(feed_info)
+    validate_feed("searx_rss_feed.xml")
 
 schedule.every(4).hours.do(generate_rss_feed)
 
