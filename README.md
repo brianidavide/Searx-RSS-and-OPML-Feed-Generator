@@ -1,15 +1,17 @@
-Searx RSS Feed Generator
+# Searx RSS Feed Generator
 
 Searx RSS Feed Generator is a Python script that creates an RSS feed and an OPML feed based on search results from a Searx instance. The script fetches search results periodically (every 4 hours by default) and generates an RSS feed with search results that have been published within a specified time frame.
-Features
 
-    Fetch search results from a Searx instance using a custom search query
-    Generate an RSS feed with the search results
-    Create an OPML feed for easy subscription to the generated RSS feed
-    Validate the generated RSS feed
-    Periodically update the RSS and OPML feeds based on a schedule
+## Features
 
-Installation
+ 1. Fetch search results from a Searx instance using a custom search
+    query;
+ 2. Generate an RSS feed with the search results;
+ 3. Create an OPML feed for easy subscription to the generated RSS feed;
+ 4. Validate the generated RSS feed Periodically update the RSS and OPML feeds based
+    on a schedule
+
+## Installation
 
 Clone the repository:
 
@@ -20,11 +22,12 @@ Install the required dependencies:
 
     pip install -r requirements.txt
 
-Usage
+## Usage
 
+### Step 1
 Edit the rss_server.py script to set your desired search query and Searx instance URL.
 
-Run the script:
+### Step 2: Run the script
 
     python rss_server.py
 
@@ -32,7 +35,7 @@ The script will periodically generate an RSS feed (searx_rss_feed.xml) and an OP
 
 Access the generated RSS feed and OPML feed using a web server or a local file path, depending on your setup.
 
-Customization
+## Customization
 
 You can customize the script by modifying the following variables in the rss_server.py file:
 
@@ -40,3 +43,4 @@ You can customize the script by modifying the following variables in the rss_ser
     searx_instance_url: Set the URL of the Searx instance you want to use.
     prefs_url: Set the URL for the preferences of the Searx instance.
     hours: Set the maximum age (in hours) of search results to be included in the RSS feed.
+
