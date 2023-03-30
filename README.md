@@ -11,27 +11,26 @@ Features
 
 Installation
 
-    Clone the repository:
+Clone the repository:
 
-bash
+    bash
+    git clone https://github.com/yourusername/searx_rss_feed_generator.git
 
-git clone https://github.com/yourusername/searx_rss_feed_generator.git
+Install the required dependencies:
 
-    Install the required dependencies:
-
-pip install -r requirements.txt
+    pip install -r requirements.txt
 
 Usage
 
-    Edit the rss_server.py script to set your desired search query and Searx instance URL.
+Edit the rss_server.py script to set your desired search query and Searx instance URL.
 
-    Run the script:
+Run the script:
 
-python rss_server.py
+    python rss_server.py
 
-    The script will periodically generate an RSS feed (searx_rss_feed.xml) and an OPML feed (searx_opml_feed.xml) based on the search results from the specified Searx instance.
+The script will periodically generate an RSS feed (searx_rss_feed.xml) and an OPML feed (searx_opml_feed.xml) based on the search results from the specified Searx instance.
 
-    Access the generated RSS feed and OPML feed using a web server or a local file path, depending on your setup.
+Access the generated RSS feed and OPML feed using a web server or a local file path, depending on your setup.
 
 Customization
 
